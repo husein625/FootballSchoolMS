@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FS20.Models
+namespace FootballSchoolMS.Models
 {
     public class Training : BaseEntity
     {

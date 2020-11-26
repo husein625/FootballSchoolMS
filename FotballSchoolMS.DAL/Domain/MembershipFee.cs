@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FS20.Models
+namespace FootballSchoolMS.Models
 {
     public class MembershipFee : BaseEntity
     {
@@ -16,7 +16,7 @@ namespace FS20.Models
         [StringLength(50)]
         public string Name { get; set; }
 
-        public decimal? amount { get; set; }
+        public decimal? Amount { get; set; }
 
         public virtual ICollection<PlayerMembershipFee> PlayerMembershipFees { get; set; }
     }

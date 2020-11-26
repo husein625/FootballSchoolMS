@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FS20.Models
+namespace FootballSchoolMS.Models
 {
     public class Group : BaseEntity
     {
@@ -21,9 +21,6 @@ namespace FS20.Models
 
         public int NumberOfPlayers { get; set; }
 
-        [Required(ErrorMessage = "Please enter the date")]
-        [Display(Name = "Date from")]
-        public DateTime DateFrom { get; set; }
 
         [Display(Name = "Date to")]
         public DateTime? DateTo { get; set; }
@@ -32,8 +29,10 @@ namespace FS20.Models
         public int? AssistantCoach1ID { get; set; }
         public int? AssistantCoach2ID { get; set; }
 
-        public virtual Employee Employee { get; set; }
+
         public virtual Employee Employee1 { get; set; }
         public virtual Employee Employee2 { get; set; }
+
+        public virtual Employee Employee3 { get; set; }
     }
 }

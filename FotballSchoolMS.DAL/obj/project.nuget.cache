@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8AruNXN+D8ATf8Vu2N1FukRivxOibXJa/451qHjVhBOvHwpfpj0NJ2qeMou3KTOY/8N2gE6+MHAZ1B4HkvguDA==",
+  "dgSpecHash": "z2vZ9ZO8n716Vms/0pkV4flJQjPk95Qn9UXGM2B2X6Gr0FjeExDJK8PY6O1bQOcle9XDe5IvAXRVr1wbjhM4Rw==",
   "success": true,
-  "projectFilePath": "D:\\Projekti\\FootballSchoolMS\\FotballSchoolMS.DAL\\FotballSchoolMS.DAL.csproj",
+  "projectFilePath": "D:\\Projekti\\Football_SchoolMS\\FotballSchoolMS.DAL\\FotballSchoolMS.DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dzenana\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Dzenana\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.0\\microsoft.aspnetcore.cryptography.internal.5.0.0.nupkg.sha512",

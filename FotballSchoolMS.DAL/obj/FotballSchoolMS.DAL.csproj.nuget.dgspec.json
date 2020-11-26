@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projekti\\FootballSchoolMS\\FotballSchoolMS.DAL\\FotballSchoolMS.DAL.csproj": {}
+    "D:\\Projekti\\Football_SchoolMS\\FotballSchoolMS.DAL\\FotballSchoolMS.DAL.csproj": {}
   },
   "projects": {
-    "D:\\Projekti\\FootballSchoolMS\\FotballSchoolMS.DAL\\FotballSchoolMS.DAL.csproj": {
+    "D:\\Projekti\\Football_SchoolMS\\FotballSchoolMS.DAL\\FotballSchoolMS.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projekti\\FootballSchoolMS\\FotballSchoolMS.DAL\\FotballSchoolMS.DAL.csproj",
+        "projectUniqueName": "D:\\Projekti\\Football_SchoolMS\\FotballSchoolMS.DAL\\FotballSchoolMS.DAL.csproj",
         "projectName": "FotballSchoolMS.DAL",
-        "projectPath": "D:\\Projekti\\FootballSchoolMS\\FotballSchoolMS.DAL\\FotballSchoolMS.DAL.csproj",
+        "projectPath": "D:\\Projekti\\Football_SchoolMS\\FotballSchoolMS.DAL\\FotballSchoolMS.DAL.csproj",
         "packagesPath": "C:\\Users\\Dzenana\\.nuget\\packages\\",
-        "outputPath": "D:\\Projekti\\FootballSchoolMS\\FotballSchoolMS.DAL\\obj\\",
+        "outputPath": "D:\\Projekti\\Football_SchoolMS\\FotballSchoolMS.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

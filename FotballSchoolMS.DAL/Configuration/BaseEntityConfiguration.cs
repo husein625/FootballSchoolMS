@@ -9,7 +9,7 @@ namespace FotballSchoolMS.DAL.Configuration
 {
     public abstract class BaseEntityConfiguration<TEntity> : IEntityTypeConfiguration<TEntity> where TEntity : BaseEntity
     {
-        public void Configure(EntityTypeBuilder<TEntity> builder)
+        public virtual void  Configure(EntityTypeBuilder<TEntity> builder)
         {
             builder.HasKey(b => b.Id);
         }

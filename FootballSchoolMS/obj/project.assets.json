@@ -5982,11 +5982,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projekti\\FootballSchoolMS\\FootballSchoolMS\\FootballSchoolMS.csproj",
+      "projectUniqueName": "D:\\Projekti\\Football_SchoolMS\\FootballSchoolMS\\FootballSchoolMS.csproj",
       "projectName": "FootballSchoolMS",
-      "projectPath": "D:\\Projekti\\FootballSchoolMS\\FootballSchoolMS\\FootballSchoolMS.csproj",
+      "projectPath": "D:\\Projekti\\Football_SchoolMS\\FootballSchoolMS\\FootballSchoolMS.csproj",
       "packagesPath": "C:\\Users\\Dzenana\\.nuget\\packages\\",
-      "outputPath": "D:\\Projekti\\FootballSchoolMS\\FootballSchoolMS\\obj\\",
+      "outputPath": "D:\\Projekti\\Football_SchoolMS\\FootballSchoolMS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -6006,8 +6006,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\Projekti\\FootballSchoolMS\\FotballSchoolMS.DAL\\FotballSchoolMS.DAL.csproj": {
-              "projectPath": "D:\\Projekti\\FootballSchoolMS\\FotballSchoolMS.DAL\\FotballSchoolMS.DAL.csproj"
+            "D:\\Projekti\\Football_SchoolMS\\FotballSchoolMS.DAL\\FotballSchoolMS.DAL.csproj": {
+              "projectPath": "D:\\Projekti\\Football_SchoolMS\\FotballSchoolMS.DAL\\FotballSchoolMS.DAL.csproj"
             }
           }
         }

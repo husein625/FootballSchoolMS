@@ -9,3 +9,14 @@ D:\Projekti\FootballSchoolMS\FotballSchoolMS.DAL\obj\Debug\netcoreapp3.1\Fotball
 D:\Projekti\FootballSchoolMS\FotballSchoolMS.DAL\obj\Debug\netcoreapp3.1\FotballSchoolMS.DAL.dll
 D:\Projekti\FootballSchoolMS\FotballSchoolMS.DAL\obj\Debug\netcoreapp3.1\FotballSchoolMS.DAL.pdb
 D:\Projekti\FootballSchoolMS\FotballSchoolMS.DAL\obj\Debug\netcoreapp3.1\FotballSchoolMS.DAL.genruntimeconfig.cache
+D:\Projekti\Football_SchoolMS\FotballSchoolMS.DAL\bin\Debug\netcoreapp3.1\FotballSchoolMS.DAL.deps.json
+D:\Projekti\Football_SchoolMS\FotballSchoolMS.DAL\bin\Debug\netcoreapp3.1\FotballSchoolMS.DAL.runtimeconfig.json
+D:\Projekti\Football_SchoolMS\FotballSchoolMS.DAL\bin\Debug\netcoreapp3.1\FotballSchoolMS.DAL.runtimeconfig.dev.json
+D:\Projekti\Football_SchoolMS\FotballSchoolMS.DAL\bin\Debug\netcoreapp3.1\FotballSchoolMS.DAL.dll
+D:\Projekti\Football_SchoolMS\FotballSchoolMS.DAL\bin\Debug\netcoreapp3.1\FotballSchoolMS.DAL.pdb
+D:\Projekti\Football_SchoolMS\FotballSchoolMS.DAL\obj\Debug\netcoreapp3.1\FotballSchoolMS.DAL.AssemblyInfoInputs.cache
+D:\Projekti\Football_SchoolMS\FotballSchoolMS.DAL\obj\Debug\netcoreapp3.1\FotballSchoolMS.DAL.AssemblyInfo.cs
+D:\Projekti\Football_SchoolMS\FotballSchoolMS.DAL\obj\Debug\netcoreapp3.1\FotballSchoolMS.DAL.csproj.CoreCompileInputs.cache
+D:\Projekti\Football_SchoolMS\FotballSchoolMS.DAL\obj\Debug\netcoreapp3.1\FotballSchoolMS.DAL.dll
+D:\Projekti\Football_SchoolMS\FotballSchoolMS.DAL\obj\Debug\netcoreapp3.1\FotballSchoolMS.DAL.pdb
+D:\Projekti\Football_SchoolMS\FotballSchoolMS.DAL\obj\Debug\netcoreapp3.1\FotballSchoolMS.DAL.genruntimeconfig.cache
