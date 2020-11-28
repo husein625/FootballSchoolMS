@@ -11,8 +11,7 @@ namespace FootballSchoolMS.Models
     {
         
 
-        [Required(ErrorMessage = "Type in please")]
-        public DateTime Date { get; set; }
+
 
         //foreign key from player model
         public int PlayerID { get; set; }

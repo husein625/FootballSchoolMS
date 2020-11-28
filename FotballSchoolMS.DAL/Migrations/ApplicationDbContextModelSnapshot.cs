@@ -19,6 +19,971 @@ namespace FotballSchoolMS.DAL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
+            modelBuilder.Entity("FootballSchoolMS.Models.Competition", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int?>("CompetitionTypeID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("IsActive")
+                        .IsRequired()
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int?>("SeasonID")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompetitionTypeID");
+
+                    b.HasIndex("SeasonID");
+
+                    b.ToTable("Competitions");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CompetitionTypeID = 1,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 806, DateTimeKind.Utc).AddTicks(751),
+                            IsActive = true,
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Competition1",
+                            SeasonID = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CompetitionTypeID = 2,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 806, DateTimeKind.Utc).AddTicks(2922),
+                            IsActive = true,
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Competition2",
+                            SeasonID = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CompetitionTypeID = 3,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 806, DateTimeKind.Utc).AddTicks(2964),
+                            IsActive = true,
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Competition3",
+                            SeasonID = 3
+                        });
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.CompetitionType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CompetitionTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 801, DateTimeKind.Utc).AddTicks(3830),
+                            CreatedBy = "hmuftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "CompetitionType1"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 801, DateTimeKind.Utc).AddTicks(4338),
+                            CreatedBy = "hmuftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "CompetitionType2"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 801, DateTimeKind.Utc).AddTicks(4347),
+                            CreatedBy = "hmuftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "CompetitionType3"
+                        });
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.Employee", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("EmployeePositionID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("Telephone")
+                        .HasMaxLength(50)
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeePositionID");
+
+                    b.ToTable("Employees");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 821, DateTimeKind.Utc).AddTicks(6797),
+                            CreatedBy = "hmuftic",
+                            Email = "hmuftic@hotmail.com",
+                            EmployeePositionID = 1,
+                            LastName = "muftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Husein",
+                            Telephone = 387435655
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 821, DateTimeKind.Utc).AddTicks(6904),
+                            CreatedBy = "hmuftic",
+                            Email = "asaric@hotmail.com",
+                            EmployeePositionID = 2,
+                            LastName = "Saric",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Adin",
+                            Telephone = 387435655
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 821, DateTimeKind.Utc).AddTicks(6907),
+                            CreatedBy = "hmuftic",
+                            Email = "ehalilovic@hotmail.com",
+                            EmployeePositionID = 3,
+                            LastName = "Halilovic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Edin",
+                            Telephone = 387435655
+                        });
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.EmployeePosition", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EmployeePositions");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 822, DateTimeKind.Utc).AddTicks(7545),
+                            CreatedBy = "hmuftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Coach"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 822, DateTimeKind.Utc).AddTicks(7600),
+                            CreatedBy = "hmuftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Assistant-Coach"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 822, DateTimeKind.Utc).AddTicks(7603),
+                            CreatedBy = "hmuftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Goalkeeper-Coach"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 822, DateTimeKind.Utc).AddTicks(7605),
+                            CreatedBy = "hmuftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Economist"
+                        });
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.Group", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int?>("Age")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("AssistantCoach1ID")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("AssistantCoach2ID")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CoachID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DateTo")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("NumberOfPlayers")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AssistantCoach1ID");
+
+                    b.HasIndex("AssistantCoach2ID");
+
+                    b.HasIndex("CoachID");
+
+                    b.ToTable("Groups");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Age = 18,
+                            AssistantCoach1ID = 2,
+                            AssistantCoach2ID = 3,
+                            CoachID = 1,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 826, DateTimeKind.Utc).AddTicks(2143),
+                            CreatedBy = "hmuftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Group1",
+                            NumberOfPlayers = 25
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Age = 15,
+                            AssistantCoach1ID = 1,
+                            AssistantCoach2ID = 3,
+                            CoachID = 2,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 826, DateTimeKind.Utc).AddTicks(2246),
+                            CreatedBy = "hmuftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Group2",
+                            NumberOfPlayers = 22
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Age = 25,
+                            AssistantCoach1ID = 3,
+                            AssistantCoach2ID = 1,
+                            CoachID = 2,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 826, DateTimeKind.Utc).AddTicks(2249),
+                            CreatedBy = "hmuftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Group3",
+                            NumberOfPlayers = 26
+                        });
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.MembershipFee", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<decimal?>("Amount")
+                        .IsRequired()
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MembershipFees");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Amount = 50m,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 827, DateTimeKind.Utc).AddTicks(6695),
+                            CreatedBy = "hmuftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "MembershipFee1"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Amount = 60m,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 827, DateTimeKind.Utc).AddTicks(6752),
+                            CreatedBy = "hmuftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "MembershipFee2"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Amount = 40m,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 827, DateTimeKind.Utc).AddTicks(6756),
+                            CreatedBy = "hmuftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "MembershipFee2"
+                        });
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.Opponent", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Opponents");
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.Player", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("AspNetUserID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTimeOffset>("BirthDate")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset?>("DateTo")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("GroupID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("Telephone")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UniqueId")
+                        .HasMaxLength(4)
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AspNetUserID");
+
+                    b.HasIndex("GroupID");
+
+                    b.ToTable("Players");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BirthDate = new DateTimeOffset(new DateTime(1998, 10, 27, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 1, 0, 0, 0)),
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 833, DateTimeKind.Utc).AddTicks(5257),
+                            CreatedBy = "hmuftic",
+                            Email = "hmuftic@hotmail.com",
+                            GroupID = 1,
+                            LastName = "Muftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Husein",
+                            Telephone = 123123123,
+                            UniqueId = 0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BirthDate = new DateTimeOffset(new DateTime(1978, 10, 27, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 2, 0, 0, 0)),
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 833, DateTimeKind.Utc).AddTicks(5432),
+                            CreatedBy = "hmuftic",
+                            Email = "hmuftic@hotmail.com",
+                            GroupID = 2,
+                            LastName = "Muftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Edin",
+                            Telephone = 123123123,
+                            UniqueId = 0
+                        },
+                        new
+                        {
+                            Id = 3,
+                            BirthDate = new DateTimeOffset(new DateTime(1978, 10, 27, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 2, 0, 0, 0)),
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 833, DateTimeKind.Utc).AddTicks(5442),
+                            CreatedBy = "hmuftic",
+                            Email = "hmuftic@hotmail.com",
+                            GroupID = 3,
+                            LastName = "Halilovic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Adin",
+                            Telephone = 123123123,
+                            UniqueId = 0
+                        },
+                        new
+                        {
+                            Id = 4,
+                            BirthDate = new DateTimeOffset(new DateTime(1978, 10, 27, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 2, 0, 0, 0)),
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 833, DateTimeKind.Utc).AddTicks(5448),
+                            CreatedBy = "hmuftic",
+                            Email = "hmuftic@hotmail.com",
+                            GroupID = 2,
+                            LastName = "Halilovic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Adi",
+                            Telephone = 123123123,
+                            UniqueId = 0
+                        });
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.PlayerMembershipFee", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MembershipFeeID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("PlayerID")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MembershipFeeID");
+
+                    b.HasIndex("PlayerID");
+
+                    b.ToTable("PlayerMembershipFees");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 835, DateTimeKind.Utc).AddTicks(6894),
+                            CreatedBy = "hmuftic",
+                            MembershipFeeID = 2,
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PlayerID = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 835, DateTimeKind.Utc).AddTicks(8049),
+                            CreatedBy = "hmuftic",
+                            MembershipFeeID = 1,
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PlayerID = 3
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 835, DateTimeKind.Utc).AddTicks(8070),
+                            CreatedBy = "hmuftic",
+                            MembershipFeeID = 1,
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PlayerID = 4
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 835, DateTimeKind.Utc).AddTicks(8073),
+                            CreatedBy = "hmuftic",
+                            MembershipFeeID = 1,
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PlayerID = 2
+                        });
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.Season", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset?>("DateTo")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<DateTime>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Seasons");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 836, DateTimeKind.Utc).AddTicks(9825),
+                            CreatedBy = "hmuftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Season1"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 836, DateTimeKind.Utc).AddTicks(9882),
+                            CreatedBy = "hmuftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Season2"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 836, DateTimeKind.Utc).AddTicks(9885),
+                            CreatedBy = "hmuftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Season2"
+                        });
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.Stadium", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("Capacity")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("Telephone")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Stadiums");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Address = "Address1",
+                            Capacity = 20000,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 838, DateTimeKind.Utc).AddTicks(6184),
+                            CreatedBy = "hmuftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Stadium1",
+                            Telephone = 11231232
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Address = "Address2",
+                            Capacity = 20000,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 838, DateTimeKind.Utc).AddTicks(6288),
+                            CreatedBy = "hmuftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Stadium2",
+                            Telephone = 11231232
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Address = "Address3",
+                            Capacity = 20000,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 838, DateTimeKind.Utc).AddTicks(6292),
+                            CreatedBy = "hmuftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Stadium2",
+                            Telephone = 11231232
+                        });
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.Training", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("GroupID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int?>("TrainingTypeID")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GroupID");
+
+                    b.HasIndex("TrainingTypeID");
+
+                    b.ToTable("Trainings");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 841, DateTimeKind.Utc).AddTicks(4708),
+                            CreatedBy = "hmuftic",
+                            GroupID = 1,
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Training1",
+                            TrainingTypeID = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 841, DateTimeKind.Utc).AddTicks(4776),
+                            CreatedBy = "hmuftic",
+                            GroupID = 2,
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Training2",
+                            TrainingTypeID = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 841, DateTimeKind.Utc).AddTicks(4780),
+                            CreatedBy = "hmuftic",
+                            GroupID = 2,
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Training3",
+                            TrainingTypeID = 2
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 841, DateTimeKind.Utc).AddTicks(4782),
+                            CreatedBy = "hmuftic",
+                            GroupID = 2,
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Training4",
+                            TrainingTypeID = 1
+                        });
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.TrainingType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TrainingTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 844, DateTimeKind.Utc).AddTicks(8765),
+                            CreatedBy = "hmuftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "TrainingType1"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 844, DateTimeKind.Utc).AddTicks(8818),
+                            CreatedBy = "hmuftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "TrainingType2"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 844, DateTimeKind.Utc).AddTicks(8821),
+                            CreatedBy = "hmuftic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "TrainingType3"
+                        });
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.TrainingsPresence", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int?>("CoachID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<bool?>("IsActive")
+                        .IsRequired()
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("PlayerID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TrainingID")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.HasIndex("PlayerID");
+
+                    b.HasIndex("TrainingID");
+
+                    b.ToTable("TrainingsPresences");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 843, DateTimeKind.Utc).AddTicks(6774),
+                            CreatedBy = "hmuftic",
+                            IsActive = true,
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PlayerID = 1,
+                            TrainingID = 2
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 843, DateTimeKind.Utc).AddTicks(6918),
+                            CreatedBy = "hmuftic",
+                            IsActive = true,
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PlayerID = 2,
+                            TrainingID = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(2020, 11, 27, 14, 50, 29, 843, DateTimeKind.Utc).AddTicks(6922),
+                            CreatedBy = "hmuftic",
+                            IsActive = true,
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PlayerID = 2,
+                            TrainingID = 2
+                        });
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -82,6 +1047,10 @@ namespace FotballSchoolMS.DAL.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -133,6 +1102,8 @@ namespace FotballSchoolMS.DAL.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -215,6 +1186,134 @@ namespace FotballSchoolMS.DAL.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("FootballSchoolMS.Models.ApplicationUser", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.HasDiscriminator().HasValue("ApplicationUser");
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.Competition", b =>
+                {
+                    b.HasOne("FootballSchoolMS.Models.CompetitionType", "CompetitionType")
+                        .WithMany("Competitions")
+                        .HasForeignKey("CompetitionTypeID");
+
+                    b.HasOne("FootballSchoolMS.Models.Season", "Season")
+                        .WithMany("Competitions")
+                        .HasForeignKey("SeasonID");
+
+                    b.Navigation("CompetitionType");
+
+                    b.Navigation("Season");
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.Employee", b =>
+                {
+                    b.HasOne("FootballSchoolMS.Models.EmployeePosition", "EmployeePosition")
+                        .WithMany("Employees")
+                        .HasForeignKey("EmployeePositionID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("EmployeePosition");
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.Group", b =>
+                {
+                    b.HasOne("FootballSchoolMS.Models.Employee", "Employee2")
+                        .WithMany("Groups2")
+                        .HasForeignKey("AssistantCoach1ID");
+
+                    b.HasOne("FootballSchoolMS.Models.Employee", "Employee3")
+                        .WithMany("Groups3")
+                        .HasForeignKey("AssistantCoach2ID");
+
+                    b.HasOne("FootballSchoolMS.Models.Employee", "Employee1")
+                        .WithMany("Groups1")
+                        .HasForeignKey("CoachID");
+
+                    b.Navigation("Employee1");
+
+                    b.Navigation("Employee2");
+
+                    b.Navigation("Employee3");
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.Player", b =>
+                {
+                    b.HasOne("FootballSchoolMS.Models.ApplicationUser", "User")
+                        .WithMany("Players")
+                        .HasForeignKey("AspNetUserID");
+
+                    b.HasOne("FootballSchoolMS.Models.Group", "Group")
+                        .WithMany("Players")
+                        .HasForeignKey("GroupID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Group");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.PlayerMembershipFee", b =>
+                {
+                    b.HasOne("FootballSchoolMS.Models.MembershipFee", "MembershipFee")
+                        .WithMany("PlayerMembershipFees")
+                        .HasForeignKey("MembershipFeeID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FootballSchoolMS.Models.Player", "Player")
+                        .WithMany("PlayerMembershipFees")
+                        .HasForeignKey("PlayerID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("MembershipFee");
+
+                    b.Navigation("Player");
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.Training", b =>
+                {
+                    b.HasOne("FootballSchoolMS.Models.Group", "Group")
+                        .WithMany("Trainings")
+                        .HasForeignKey("GroupID");
+
+                    b.HasOne("FootballSchoolMS.Models.TrainingType", "TrainingType")
+                        .WithMany("Trainings")
+                        .HasForeignKey("TrainingTypeID");
+
+                    b.Navigation("Group");
+
+                    b.Navigation("TrainingType");
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.TrainingsPresence", b =>
+                {
+                    b.HasOne("FootballSchoolMS.Models.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId");
+
+                    b.HasOne("FootballSchoolMS.Models.Player", "Player")
+                        .WithMany("TrainingsPresences")
+                        .HasForeignKey("PlayerID");
+
+                    b.HasOne("FootballSchoolMS.Models.Training", "Training")
+                        .WithMany("TrainingsPresences")
+                        .HasForeignKey("TrainingID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+
+                    b.Navigation("Player");
+
+                    b.Navigation("Training");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -264,6 +1363,64 @@ namespace FotballSchoolMS.DAL.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.CompetitionType", b =>
+                {
+                    b.Navigation("Competitions");
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.Employee", b =>
+                {
+                    b.Navigation("Groups1");
+
+                    b.Navigation("Groups2");
+
+                    b.Navigation("Groups3");
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.EmployeePosition", b =>
+                {
+                    b.Navigation("Employees");
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.Group", b =>
+                {
+                    b.Navigation("Players");
+
+                    b.Navigation("Trainings");
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.MembershipFee", b =>
+                {
+                    b.Navigation("PlayerMembershipFees");
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.Player", b =>
+                {
+                    b.Navigation("PlayerMembershipFees");
+
+                    b.Navigation("TrainingsPresences");
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.Season", b =>
+                {
+                    b.Navigation("Competitions");
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.Training", b =>
+                {
+                    b.Navigation("TrainingsPresences");
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.TrainingType", b =>
+                {
+                    b.Navigation("Trainings");
+                });
+
+            modelBuilder.Entity("FootballSchoolMS.Models.ApplicationUser", b =>
+                {
+                    b.Navigation("Players");
                 });
 #pragma warning restore 612, 618
         }

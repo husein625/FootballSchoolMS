@@ -22,5 +22,8 @@ namespace FootballSchoolMS.Models
 
         public int? TrainingTypeID { get; set; }
         public TrainingType TrainingType { get; set; }
+
+
+        public List<TrainingsPresence> TrainingsPresences { get; set; }
     }
 }

@@ -12,10 +12,7 @@ namespace FootballSchoolMS.Models
 
         
 
-        [Required]
-        [StringLength(50)]
-        public DateTime Date { get; set; } 
-
+       
         public bool? IsActive { get; set; }
 
         public int? PlayerID { get; set; }

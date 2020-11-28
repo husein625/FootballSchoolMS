@@ -34,5 +34,9 @@ namespace FootballSchoolMS.Models
         public virtual Employee Employee2 { get; set; }
 
         public virtual Employee Employee3 { get; set; }
+
+
+        public List<Player> Players { get; set; }
+        public List<Training> Trainings { get; set; }
     }
 }

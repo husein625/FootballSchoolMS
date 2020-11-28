@@ -17,7 +17,6 @@ namespace FootballSchoolMS.Models
         public string Name { get; set; }
 
 
-        public DateTime DateFrom { get; set; }
 
         [Display(Name = "Date to")]
         public DateTimeOffset? DateTo { get; set; }

@@ -17,6 +17,8 @@ namespace FotballSchoolMS.DAL.Configuration
             builder.HasOne(b => b.Employee1).WithMany(b => b.Groups1).HasForeignKey(builder => builder.CoachID);
             builder.HasOne(b => b.Employee2).WithMany(b => b.Groups2).HasForeignKey(builder => builder.AssistantCoach1ID);
             builder.HasOne(b => b.Employee3).WithMany(b => b.Groups3).HasForeignKey(builder => builder.AssistantCoach2ID);
+            builder.HasMany(b => b.Players).WithOne(b => b.Group).HasForeignKey(builder => builder.GroupID);
+
 
             builder.HasData(new List<Group> {
                 new Group
