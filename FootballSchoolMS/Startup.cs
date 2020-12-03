@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FotballSchoolMS.DAL;
+using FotballSchoolMS.DAL.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,12 +31,27 @@ namespace FootballSchoolMS
         {
             services.AddControllers();
 
-
-
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SqlConnection")));
 
             services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
                             .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<IPlayerRepository, PlayerRepository>();
+            services.AddScoped<ICompetitionRepository, CompetitionRepository>();
+            services.AddScoped<ICompetitionTypeRepository, CompetitionTypeRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IEmployeePositionRepository, EmployeePositionRepository>();
+            services.AddScoped<IGroupRepository, GroupRepository>();
+            services.AddScoped<IMembershipFeeRepository, MembershipFeeRepository>();
+            services.AddScoped<IOpponentRepository, OpponentRepository>();
+            services.AddScoped<IPlayerMembershipFeeRepository, PlayerMembershipFeeRepository>();
+            services.AddScoped<ISeasonRepository, SeasonRepository>();
+            services.AddScoped<IStadiumRepository, StadiumRepository>();
+            services.AddScoped<ITrainingRepository, TrainingRepository>();
+            services.AddScoped<ITrainingPresenceRepository, TrainingsPresenceRepository>();
+            services.AddScoped<ITrainingTypeRepository, TrainingTypeRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

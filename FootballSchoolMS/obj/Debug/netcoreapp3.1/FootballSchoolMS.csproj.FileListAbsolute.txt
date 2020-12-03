@@ -70,7 +70,6 @@ D:\Projekti\FootballSchoolMS\FootballSchoolMS\bin\Debug\netcoreapp3.1\FotballSch
 D:\Projekti\FootballSchoolMS\FootballSchoolMS\obj\Debug\netcoreapp3.1\FootballSchoolMS.csprojAssemblyReference.cache
 D:\Projekti\Football_SchoolMS\FootballSchoolMS\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\Projekti\Football_SchoolMS\FootballSchoolMS\bin\Debug\netcoreapp3.1\appsettings.json
-D:\Projekti\Football_SchoolMS\FootballSchoolMS\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 D:\Projekti\Football_SchoolMS\FootballSchoolMS\bin\Debug\netcoreapp3.1\FootballSchoolMS.exe
 D:\Projekti\Football_SchoolMS\FootballSchoolMS\bin\Debug\netcoreapp3.1\FootballSchoolMS.deps.json
 D:\Projekti\Football_SchoolMS\FootballSchoolMS\bin\Debug\netcoreapp3.1\FootballSchoolMS.runtimeconfig.json
@@ -138,3 +137,4 @@ D:\Projekti\Football_SchoolMS\FootballSchoolMS\obj\Debug\netcoreapp3.1\staticweb
 D:\Projekti\Football_SchoolMS\FootballSchoolMS\obj\Debug\netcoreapp3.1\FootballSchoolMS.dll
 D:\Projekti\Football_SchoolMS\FootballSchoolMS\obj\Debug\netcoreapp3.1\FootballSchoolMS.pdb
 D:\Projekti\Football_SchoolMS\FootballSchoolMS\obj\Debug\netcoreapp3.1\FootballSchoolMS.genruntimeconfig.cache
+D:\Projekti\Football_SchoolMS\FootballSchoolMS\obj\Debug\netcoreapp3.1\scopedcss\bundle\FootballSchoolMS.styles.css
