@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FotballSchoolMS.DAL.Repository
 {
-  public  class PlayerRepository : GenericRepository<Player> , IPlayerRepository
+  public  class PlayerRepository :  GenericRepository<Player> , IPlayerRepository
     {
         public PlayerRepository(ApplicationDbContext applicationDbContext) : base(applicationDbContext)
         {
